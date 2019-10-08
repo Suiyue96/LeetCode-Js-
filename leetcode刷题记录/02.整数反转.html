@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02.整数反转</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
+        // [−231,  231 − 1] 如果反转后整数溢出那么就返回 0
+        var reverse = function(x) {
+            let str = String(x);
+            //负数如何处理
+            var reverseNum = 0;
+            if(x<0){
+                reverseNum = str.slice(1).split("").reverse().join("");
+                reverseNum = -(Number(reverseNum));
+            }
+            //正数如何处理
+            else if(x>0){
+                reverseNum = str.split("").reverse().join("");
+                reverseNum = Number(reverseNum);
+            }
+            else{
+                return 0;
+            }
+
+            //判断反转后的数是否超出范围
+            if(reverseNum < -(Math.pow(2,31)) || reverseNum > Math.pow(2,31) - 1){
+                return 0;
+            }
+            else{
+                return reverseNum;
+            }
+        };
+
+        console.log(reverse(-1534236469));
+    </script>
+</body>
+</html>

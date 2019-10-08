@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组原地去重</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var removeDuplicates = function(nums) {
+            var arrLength = nums.length;
+            for(var i=1;i<arrLength;i++){
+                if(nums[i-1] === nums[i]){
+                    nums.splice(i,1);
+                    arrLength = nums.length;
+                }
+            }
+            return nums;
+        };
+
+        var arr = [0,0,1,1,1,2,2,3,3,4];
+        var result = removeDuplicates(arr);
+        console.log(arr);
+    </script>
+</body>
+</html>

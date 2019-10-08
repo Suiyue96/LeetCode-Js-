@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有效的括号</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /**
+         * @param {string} s
+         * @return {boolean}
+         */
+        var isValid = function(s) {
+            //解题思路：利用栈的思想解决问题
+            //典型的括号匹配问题
+            var arr = [];
+            for(var i=0;i<s.length;i++){
+                if(s[i]==='(' || s[i]==='{' || s[i]==='['){
+                    arr.push(s[i]);
+                }
+                else if(s[i]===')'){
+                    if(arr.pop() !== '('){
+                        return false;
+                    }
+                }
+                else if(s[i]==='}'){
+                    if(arr.pop() !== '{'){
+                        return false;
+                    }
+                }
+                else if(s[i]===']'){
+                    if(arr.pop() !== '['){
+                        return false;
+                    }
+                }
+            }
+            return arr.length === 0;
+        };
+
+        console.log(isValid('['));
+    </script>
+</body>
+</html>

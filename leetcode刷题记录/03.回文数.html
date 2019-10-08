@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回文数</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var isPalindrome = function(x) {
+            if(x < 0){
+                return false;
+            }
+            else if(x > 0){
+                let str = String(x);
+                str = str.split("").reverse().join("");
+                let reverseNum = Number(str);
+                console.log(reverseNum);
+                if(reverseNum === x){
+                    return true   
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                return true;
+            }
+        }; 
+        var x = 121;
+        console.log(isPalindrome(x));
+    </script>
+</body>
+</html>
